@@ -2,7 +2,7 @@ Yatzy Vol 2 - by Jere Manni
 
 This game popped into my mind when I was playing DnD with my friends and I had a lot of different dices in my hand.
 The basic idea is exactly the same as in Yatzy, but you will not play with 5 d6 dices, instead with:d4 , d6, d8, d12 and d20.
-This changes the probabilities alot and makes yatzy almost impossible. I have not yet checked out the numbers.
+This changes the probabilities alot and makes yatzy a lot more unprobable. I have not yet checked out the numbers.
 The different dices also makes the game more strategic since you have different probability with different dice.
 
 For example:    Throwing a 6 with d6 (like in normal yatzy) is not as good as throwing the 6 with d20.
