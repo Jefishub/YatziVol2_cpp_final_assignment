@@ -2,7 +2,7 @@
 using namespace std;
 
 class D8 {
-    private:
+    public:
     int result;
 
     //constructors
