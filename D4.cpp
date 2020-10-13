@@ -1,6 +1,6 @@
 #include "D4.h"
 
-D4 :: D4() {
+D4::D4() {
     result = 0;
 }
 

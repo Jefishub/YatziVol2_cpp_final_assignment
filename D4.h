@@ -1,8 +1,9 @@
+#pragma once
 #include <iostream>
 using namespace std;
 
 class D4 {
-    private:
+    public:
     int result;
 
     //constructors
