@@ -12,10 +12,13 @@ class Dice {
 
     //constructors
     public:
+    Dice();
     Dice(int x);
+    void showAll();
+    //void setDices();
     void throwDice();
     int getResult();
-    void setHold();
+    void changeHold();
     void releaseHold();
 
 };

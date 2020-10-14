@@ -1,10 +1,16 @@
+#pragma once
 #include <iostream>
-#include "objectList.h"
+#include "Dice.h"
 using namespace std;
 
 class Dices {
     public:
+    Dice dice_list [5];
+
+    public:
     Dices();
     void createDices();
+    void releaseDices();
     void throwDices();
+    string showDices();
 };
