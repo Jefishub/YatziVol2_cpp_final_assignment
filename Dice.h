@@ -15,7 +15,7 @@ class Dice {
     Dice();
     Dice(int x);
     void showAll();
-    //void setDices();
+
     void throwDice();
     int getResult();
     void changeHold();
