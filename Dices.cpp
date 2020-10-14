@@ -4,6 +4,7 @@
 //Initializing Dices class to create an empty Dice class array for your dices
 Dices :: Dices() {
     Dice dice_list [5] = {};
+    int throws = 0;
 };
 
 //Generates dices to dice_list array
@@ -14,18 +15,20 @@ void Dices::createDices(){
     }
 };
 
-//Releases all dices to make them free for rerolling
+//Releases all dices to make them free for rerolling, resets throws counter
 void Dices::releaseDices(){
     for (int i = 0; i < 5; i++){
         dice_list[i].releaseHold(); 
     }
+    //throws = 0;
 };
 
-//Rolls dices -> new random value to Dice.result
+//Rolls dices -> new random value to Dice.result. Adds one throw to counter
 void Dices::throwDices(){
     for (int j = 0; j < 5; j++){
         dice_list[j].throwDice();
     }
+    //throws += 1;
 };
 
 //Generates text where dice size and results are shown -> return text

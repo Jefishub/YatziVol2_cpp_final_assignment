@@ -6,6 +6,7 @@ using namespace std;
 class Dices {
     public:
     Dice dice_list [5];
+    int throws;
 
     public:
     Dices();
