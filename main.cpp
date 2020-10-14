@@ -11,6 +11,7 @@ int main(){
     Dices nopat;
     Table taulukko;
     nopat.createDices();
+    taulukko.setTable();
     cout << nopat.showDices();
     taulukko.showTable();
     nopat.throwDices();

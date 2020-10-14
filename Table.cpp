@@ -5,31 +5,43 @@ using namespace std;
     
     
 Table::Table(){
-    string table_names [19] = {    
-    "(1) Ones",
-    "(2) Twos",
-    "(3) Threes",
-    "(4) Fours",
-    "(5) Fives",
-    "(6) Sixes",
-    "Upper part bonus",
-    "(p1) One pair",
-    "(p2) Two pairs",
-    "(3s) Three same",
-    "(4s) Four same",
-    "(ls) Low straight",
-    "(ms) Mid straight",
-    "(hs) High straight",
-    "(fh) Full house",
-    "(sum) Sum",
-    "(y) Yatzy",
-    "Lower part sum",
-    "Full table sum"};
-
-    string table_short [17] = {"1","2","3","4","5","6","","p1","p2","3s","4s","ls","ms","hs","fh","sum","y"};
-    string table_values [19] = {"","","","","","","","","","","","","","","","","","",""};
+    string table_names [19] = {};   
+    string table_short [19] = {};
+    string table_values [19] = {};
     bool isEnd = false;
 }
+
+void Table::setTable(){
+    string set_names [19]= {
+        "(1) Ones            ",
+        "(2) Twos            ",
+        "(3) Threes          ",
+        "(4) Fours           ",
+        "(5) Fives           ",
+        "(6) Sixes           ",
+        "==Upper part bonus==",
+        "(p1) One pair       ",
+        "(p2) Two pairs      ",
+        "(3s) Three same     ",
+        "(4s) Four same      ",
+        "(ls) Low straight   ",
+        "(ms) Mid straight   ",
+        "(hs) High straight  ",
+        "(fh) Full house     ",
+        "(sum) Sum           ",
+        "(y) Yatzy           ",
+        "===Lower part sum===",
+        "Full table sum      "
+    };
+    string set_short [19] = {"1","2","3","4","5","6","","p1","p2","3s","4s","ls","ms","hs","fh","sum","y","",""};
+    string set_values [19] = {"","","","","","","","","","","","","","","","","","",""};
+    for (int i=0;i<19;i++){
+        table_names[i] = set_names[i];
+        table_short[i] = set_short[i];
+        table_values[i] = set_values[i];
+        isEnd = false;
+    }
+};
 
 
 //Shows the table with added results (Called from Main() after every round)
