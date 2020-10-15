@@ -32,10 +32,10 @@ void Dices::throwDices(){
 };
 
 //Generates text where dice size and results are shown -> return text
-string Dices::showDices(){
+void Dices::showDices(){
     string text ="";
     for (int i = 0; i<5 ;i++){
         text += dice_list[i].name + " = " + std::to_string(dice_list[i].getResult()) + "\n";
     }
-    return text;
+    cout << "---Dice throw results---" << endl << text << "---Dice throw results---" << endl;
 };

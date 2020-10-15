@@ -1,6 +1,7 @@
 #include "Table.h"
-#include <string> 
-#include <algorithm>  
+#include <iostream>
+#include <sstream>
+#include <string>  
 using namespace std; 
     
     
@@ -71,31 +72,47 @@ void Table::addResult(string name_short, string result){
 //Checks if all table_values from 0 - 5 has been added -> counts upper part total (+ bonus) points
 void Table::countUpper(){
     int sum=0;
-    bool is_valid = true;
-    for (int i = 0;i < 6; i++){
-        if (table_values[i] == "")
-            is_valid = false;
-        sum += stoi(table_values[i]);
-    }
+    int is_valid = 1;
     
-    if (is_valid = true){
-        //if sum is negative -> no bonus
-        if (sum >= 0)
-            sum += 50;
+    for (int i = 0;i < 6; i++){
+        cout << is_valid;
+        if (table_values[i] == "")
+            is_valid = 0;
+        
+        else {
+            stringstream x(table_values[i]);
+            int temp_value = 0;
+            x >> temp_value;
+            sum += temp_value;
         }
+    }
+    cout << "Here is_valid is=" << is_valid;
+    if (is_valid == 1){
+        //if sum is negative -> no bonus
+        if (sum >= 63)
+            sum += 50;
+        
         table_values[6] = to_string(sum);
+    }
     
 };
 //Checks if all table_values from 7 - 16 has been added -> counts lower part total points
 void Table::countLower(){
     int sum=0;
-    bool is_valid = true;
+    int is_valid = 1;
     for (int i = 7;i < 17; i++){
+        cout << is_valid;
         if (table_values[i] == "")
-            is_valid = false;
-        sum += stoi(table_values[i]);
+            is_valid = 0;
+        else {
+            stringstream x(table_values[i]);
+            int temp_value = 0;
+            x >> temp_value;
+            sum += temp_value;
+        }        
     }
-    if (is_valid = true){
+    cout << "Here is_valid is=" << is_valid;
+    if (is_valid == 1){
         table_values[17] = to_string(sum);
     }
 };
@@ -103,9 +120,16 @@ void Table::countLower(){
 //if either upper part bonus or lower part sum equals "", then nothing.
 //if both have values -> count final sum -> end game
 void Table::countFinal(){
-    if (!(table_values[6] == "" || table_values[17] == ""))
-        table_values[18] = to_string(stoi(table_values[6]) + stoi(table_values[18]));
+    if (!(table_values[6] == "" || table_values[17] == "")){
+        stringstream x(table_values[6]);
+        stringstream y(table_values[17]);
+        int temp_value1 = 0;
+        int temp_value2 = 0;
+        x >> temp_value1;
+        y >> temp_value2;
+        table_values[18] = to_string(temp_value1 + temp_value2);
         isEnd = true;
+    }
 };
 
 //If final score has been counted by countFinal() -> end game

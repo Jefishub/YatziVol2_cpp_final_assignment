@@ -13,5 +13,5 @@ class Dices {
     void createDices();
     void releaseDices();
     void throwDices();
-    string showDices();
+    void showDices();
 };
