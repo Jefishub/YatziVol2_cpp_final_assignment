@@ -14,4 +14,5 @@ class Dices {
     void releaseDices();
     void throwDices();
     void showDices();
+    void holdDice(int hold);
 };

@@ -75,7 +75,6 @@ void Table::countUpper(){
     int is_valid = 1;
     
     for (int i = 0;i < 6; i++){
-        cout << is_valid;
         if (table_values[i] == "")
             is_valid = 0;
         
@@ -86,7 +85,6 @@ void Table::countUpper(){
             sum += temp_value;
         }
     }
-    cout << "Here is_valid is=" << is_valid;
     if (is_valid == 1){
         //if sum is negative -> no bonus
         if (sum >= 63)
@@ -101,7 +99,6 @@ void Table::countLower(){
     int sum=0;
     int is_valid = 1;
     for (int i = 7;i < 17; i++){
-        cout << is_valid;
         if (table_values[i] == "")
             is_valid = 0;
         else {
@@ -111,7 +108,6 @@ void Table::countLower(){
             sum += temp_value;
         }        
     }
-    cout << "Here is_valid is=" << is_valid;
     if (is_valid == 1){
         table_values[17] = to_string(sum);
     }

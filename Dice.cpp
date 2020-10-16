@@ -6,7 +6,7 @@ Dice::Dice() {
     name = "test";
     index = 0;
     result = 0;
-    hold = false;    
+    hold = 0;    
 };
 
 //Dice initialize -> dice size is based on the Dices class dice_list array index (int x), where the dices are generated
@@ -15,18 +15,18 @@ Dice::Dice(int x) {
     name = "D" + std::to_string(index_table[x]);
     index = index_table[x];
     result = 0;
-    hold = false;
+    hold = 0;
 };
 
 
 //For testing purposes only
 void Dice::showAll(){
-    std::cout << name << index << result << hold;
+    std::cout << "name:"<< name <<"index:" << index << "result:" << result << "hold:" << hold << endl;
 }
 
 //Generates a random number based on dice index and inserts value to result
 void Dice::throwDice() {
-    if (hold == false) 
+    if (hold == 0) 
         result = (rand() % index + 1);        
 };    
 
@@ -37,14 +37,14 @@ int Dice::getResult(){
 
 //Changes value for hold -parameter. False = rollabe, True = not rollabe
 void Dice::changeHold(){
-    if (hold = false)
-        hold = true;
+    if (hold == 0)
+        hold = 1;
     else
-        hold = false;
+        hold = 0;
 };
 
 //Forces hold value to false
 void Dice::releaseHold(){
-    hold = false;
+    hold = 0;
 };
 
