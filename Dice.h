@@ -14,6 +14,7 @@ class Dice {
     public:
     Dice();
     Dice(int x);
+    ~Dice();
     void showAll();
 
     void throwDice();

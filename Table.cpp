@@ -12,6 +12,9 @@ Table::Table(){
     bool isEnd = false;
 }
 
+//These table values could had been done better. I was thinking about making all of them objects,
+//but then I decided to go with string lists. It felt easier...
+//I feel like I would had needed to do same kind of work with these lists to initialize all the 19 objects, had I decided to go with objects
 void Table::setTable(){
     string set_names [19]= {
         "(1) Ones            ",
@@ -47,11 +50,11 @@ void Table::setTable(){
 
 //Shows the table with added results (Called from Main() after every round)
 void Table::showTable(){
-    string text = "Yatzy - Results table\n";
+    string text = "\nYatzy - Results table\n";
     for (int i = 0; i<19;i++){
         text += table_names[i] + " = " + table_values[i] + "\n";
     }
-    cout << text;
+    cout << text << endl;
 };
 
 //Adds a result to a given name location. (Called from main())
@@ -135,3 +138,5 @@ void Table::checkGameEnd(){
         cout << "Game over - Your result was" << table_values[18] << endl;
     }
 };
+
+Table::~Table(){};

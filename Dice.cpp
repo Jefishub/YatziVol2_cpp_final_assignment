@@ -48,3 +48,4 @@ void Dice::releaseHold(){
     hold = 0;
 };
 
+Dice::~Dice(){};

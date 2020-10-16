@@ -10,6 +10,7 @@ class Dices {
 
     public:
     Dices();
+    ~Dices();
     void createDices();
     void releaseDices();
     void throwDices();

@@ -11,6 +11,7 @@ class Table {
 
     public:
     Table();
+    ~Table();
     void setTable();
     void showTable();
     void addResult(string name_short, string result);
