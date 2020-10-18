@@ -72,7 +72,7 @@ int main(){
                 nopat.throwDices();
                 taulukko.showTable();
                 nopat.showDices();
-                if (nopat.throws == 3)
+                if (nopat.throws == 3) //Break out of while loop to input result into result table
                     break;
                 else{
 
@@ -110,8 +110,9 @@ int main(){
                 string b;
                 cout << "What is result ?";
                 cin >> b;
-                taulukko.addResult(a,b);
+                taulukko.addResult(a,b); //a = string short_name, b = string result (value changed into integer in Table.addResult(a,b))
             }
+
             //Reset sequence. Counts upper and lower total, resets dices Hold to 0. Checks if taulukko is full -> game end
             nopat.releaseDices();       
             taulukko.countUpper();
