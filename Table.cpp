@@ -43,8 +43,9 @@ void Table::setTable(){
         table_names[i] = set_names[i];
         table_short[i] = set_short[i];
         table_values[i] = set_values[i];
-        isEnd = false;
     }
+    isEnd = false;
+
 };
 
 
@@ -135,8 +136,12 @@ void Table::countFinal(){
 void Table::checkGameEnd(){
     if (isEnd == true){
         showTable();
-        cout << "Game over - Your result was" << table_values[18] << endl;
+        cout << "***Game over - Your result was: " << table_values[18] << "***" << endl;
     }
 };
+
+void Table::endGame(){
+    isEnd = true;
+}
 
 Table::~Table(){};

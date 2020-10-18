@@ -19,5 +19,6 @@ class Table {
     void countLower();
     void countFinal();
     void checkGameEnd();
+    void endGame();
     
 };

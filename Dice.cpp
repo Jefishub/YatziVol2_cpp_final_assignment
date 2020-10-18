@@ -1,5 +1,7 @@
 #include "Dice.h"
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 Dice::Dice() {
     int index_table [] = {4,6,8,12,20};
@@ -26,6 +28,7 @@ void Dice::showAll(){
 
 //Generates a random number based on dice index and inserts value to result
 void Dice::throwDice() {
+    srand((unsigned int)time(NULL)); //Fixes problem with pseudorandom number generator
     if (hold == 0) 
         result = (rand() % index + 1);        
 };    
