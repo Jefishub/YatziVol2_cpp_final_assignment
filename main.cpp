@@ -3,7 +3,7 @@
 #include "Table.h"
 #include "iostream"
 #include <cstdio>
-using namespace std;
+
 
 void clearScreen(){
     cout << string( 100, '\n' );
@@ -18,7 +18,7 @@ int main(){
     string quit = "";
 
 
-
+    //Game program
     while (end_game == false){  
 
         //Set initial state for nopat and taulukko
@@ -33,7 +33,7 @@ int main(){
             break;
         }
 
-        //Game program - runs until results in taulukko are full
+        // runs until results in taulukko are full (or quit/exit command is given)
         while (taulukko.isEnd == false){
 
             //Dice throwing program - Loops back when player rolls dices (max 3 rolls)
@@ -61,6 +61,7 @@ int main(){
                             cout << "Select dice (1-5) or 0 -> Select all): ";
                             int hold_dice = 0;
                             cin >> hold_dice; //Must be integer between 0 - 5, -> 0 = All, 1-5 corresponding dice (Major issue if non integer given)
+                            clearScreen();
                             nopat.holdDice(hold_dice);
                             taulukko.showTable();
                             nopat.showDices();
