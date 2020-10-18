@@ -10,7 +10,23 @@ void clearScreen(){
 }
 
 void showInfo(){
-    cout << "Yatzy vol 2 - RULES";
+    cout << "Yatzy vol 2 - RULES" << endl << endl
+         << "In this version of yatzy you will have 5 dices, but all dices are different type.\n"
+         << "You will have one D4, meaning dice with 4 edges or in other words you can get a result of 1 - 4.\n"
+         << "With D6 you can get 1-6 and so on...\n"
+         << "The full set of dices are D4, D6, D8, D12 and D20.\n\n"
+         << "To roll dice -> write 'r' or 'roll'. \n"
+         << "To hold a dice -> write 'h' and then select which dice to hold.\n"
+         << "Select from 1 - 5 -> D4 = 1, D6 = 2, D8 = 3, D12 = 4 and D20 = 5.\n\n" 
+         << "Selecting already holded dice will unhold that dice.\n"
+         << "Selecting number 0 will change hold status of ALL dices.\n"
+         << "Only non-holded dices will be rolled.\n\n"
+         << "Each round you have maximum of 3 rolls.\n"
+         << "After three rolls you have to select where you want your result.\n"
+         << "See the Results Table for corresponding shortcut in parantheses in the beginning of every row.\n"
+         << "Count the result and input that to the result table.\n\n"
+         << "Write 'exit' or 'quit' to get back to main menu.\n\n"
+         << "Have fun and good game!\n\n";
 }
 
 int main(){
@@ -29,7 +45,11 @@ int main(){
         taulukko.setTable();
 
         //Start screen
-        cout << "***Welcome to Yatzy vol 2***" << endl << "write 'info' to see rules" << endl << "write 'quit' or 'exit' to end program" << endl << "Press any key + enter to play" << endl;
+        while (true){
+        cout << "***Welcome to Yatzy vol 2***" << endl 
+             << "write 'info' to see rules" << endl 
+             << "write 'quit' or 'exit' to end program" << endl 
+             << "Press any key + enter to play" << endl;
         cin >> quit;
         if (quit == "quit" || quit == "exit"){
             end_game = true;
@@ -37,7 +57,12 @@ int main(){
         }
         else if (quit == "info"){
             showInfo();
+            cin.get();
         }
+        else
+            break;
+        }
+        
 
         // runs until results in taulukko are full (or quit/exit command is given)
         while (taulukko.isEnd == false){
