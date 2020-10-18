@@ -4,10 +4,12 @@ using namespace std;
 
 class Table {
     public:
-    string table_names [19];
-    string table_short [19];
-    string table_values [19];
+    string table_names [20];
+    string table_short [20];
+    string table_values [20];
     bool isEnd;
+    bool upper_full;
+    bool lower_full;
 
     public:
     Table();

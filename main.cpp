@@ -9,6 +9,9 @@ void clearScreen(){
     cout << string( 100, '\n' );
 }
 
+void showInfo(){
+    cout << "Yatzy vol 2 - RULES";
+}
 
 int main(){
     //create Dices and Table objects
@@ -26,11 +29,14 @@ int main(){
         taulukko.setTable();
 
         //Start screen
-        cout << "Welcome to Yatzy vol 2" << endl << "Press any key + enter to play     (quit/exit -> to end program)" << endl;
+        cout << "***Welcome to Yatzy vol 2***" << endl << "write 'info' to see rules" << endl << "write 'quit' or 'exit' to end program" << endl << "Press any key + enter to play" << endl;
         cin >> quit;
         if (quit == "quit" || quit == "exit"){
             end_game = true;
             break;
+        }
+        else if (quit == "info"){
+            showInfo();
         }
 
         // runs until results in taulukko are full (or quit/exit command is given)
@@ -74,10 +80,10 @@ int main(){
             if (taulukko.isEnd == false){
             //Add result to taulukko
                 string a;
-                cout << "Mihin laitetaan ?";
+                cout << "Where to add ?";
                 cin >> a;
                 string b;
-                cout << "Mikä tulos ?";
+                cout << "What is result ?";
                 cin >> b;
                 taulukko.addResult(a,b);
             }
