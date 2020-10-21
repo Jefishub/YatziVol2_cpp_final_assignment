@@ -25,6 +25,30 @@ void showInfo(){
          << "After three rolls you have to select where you want your result.\n"
          << "See the Results Table for corresponding shortcut in parantheses in the beginning of every row.\n"
          << "Count the result and input that to the result table.\n\n"
+         <<"In the upper part of table you are supposed get 63 or higher to gain 50 points bonus\n"
+         <<"This is done by getting 3 of the same for all = 63. "
+         <<"Add up the result by counting all same number dices together"
+         <<"(1) Ones             = x * 1\n"
+         <<"(2) Twos             = x * 2\n"
+         <<"(3) Threes           = x * 3\n"
+         <<"(4) Fours            = x * 4\n"
+         <<"(5) Fives            = x * 5\n"
+         <<"(6) Sixes            = x * 6\n"
+         <<"===Upper part sum=== = sum of upper part\n"
+         <<"**Upper part bonus** = + 50 points if over 63\n"
+         <<"(1p) One pair        = 2 x\n"
+         <<"(2p) Two pairs       = 2 x + 2 y  \n"
+         <<"(3s) Three same      = 3 x\n"
+         <<"(4s) Four same       = 4 x\n"
+         <<"(ls) Low straight    = three concecutive dices\n"
+         <<"(ms) Mid straight    = four concecutive dices\n"
+         <<"(hs) High straight   = five concecutive dices\n"
+         <<"(fh) Full house      = 2 x + 3 y\n"
+         <<"(sum) Sum            = Add all dices together\n"
+         <<"(y) Yatzy            = 5 x\n"
+         <<"===Lower part sum=== = sum of lower part\n"
+         <<"Full table sum       = Total sum\n\n"
+
          << "Write 'exit' or 'quit' to get back to main menu.\n\n"
          << "Have fun and good game!\n\n";
 }
@@ -53,6 +77,7 @@ int main(){
         cin >> quit;
         if (quit == "quit" || quit == "exit"){
             end_game = true;
+            taulukko.endGame();
             break;
         }
         else if (quit == "info"){
