@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-class D20 {
-    private:
+class D12 {
+    public:
     int result;
 
     //constructors
     public:
-    D20();
-    void throwDice20(); 
+    D12();
+    void throwDice12(); 
 
 };
